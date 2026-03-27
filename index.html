@@ -2,34 +2,45 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Mensagem Especial</title>
+    <title>Uma Mensagem Especial</title>
     <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
 
     <div class="container">
-        <h1>Uma Mensagem Para Você 🌟
-            Breno Henrique Rodrigues Rocha
-        </h1>
+        <h1>Uma mensagem para Breno Henrique Rodrigues Rocha 💌</h1>
 
-        <p class="frase">
-            Em um mundo cheio de dúvidas e incertezas, nunca se esqueça de quem você é e de tudo que já superou para chegar até aqui. 
-            Você carrega dentro de si uma força silenciosa que nem sempre aparece nos dias fáceis, mas que nunca te abandona nos momentos difíceis. 
-            Cada passo que você deu, mesmo com medo, te trouxe mais perto de se tornar a pessoa incrível que você está se tornando. 
-            E mesmo quando você acha que não está evoluindo, acredite: você está crescendo por dentro, se fortalecendo, aprendendo e se preparando 
-            para coisas muito maiores. Então respira fundo, levanta a cabeça e continua — porque o mundo ainda não viu nem metade do seu potencial, 
-            e eu tenho certeza de que o melhor de você ainda está por vir e acredito que você é melhor do que isso.
-        </p>
-        <p>Assinado: Breno Henrique Rodrigues Rocha</p>
-        <button onclick="mostrarMensagem()">Clique para ler o final</button>
+        <p class="frase" id="frase"></p>
+
+        <button onclick="mostrarFinal()">Clique para ler o final</button>
 
         <p id="final"></p>
+
+        <p class="assinatura">Com carinho, Breno Henrique Rodrigues Rocha</p>
     </div>
 
     <script>
-        function mostrarMensagem() {
+        const texto = `Em um mundo cheio de dúvidas e incertezas, nunca se esqueça de quem você é e de tudo que já superou para chegar até aqui. 
+        Você carrega dentro de si uma força silenciosa que nem sempre aparece nos dias fáceis, mas que nunca te abandona nos momentos difíceis. 
+        Cada passo que você deu, mesmo com medo, te trouxe mais perto de se tornar a pessoa incrível que você está se tornando. 
+        E mesmo quando você acha que não está evoluindo, acredite: você está crescendo por dentro, se fortalecendo, aprendendo e se preparando 
+        para coisas muito maiores. Então respira fundo, levanta a cabeça e continua — porque o mundo ainda não viu nem metade do seu potencial, 
+        e eu tenho certeza de que o melhor de você ainda está por vir.`;
+
+        let i = 0;
+        function escreverTexto() {
+            if (i < texto.length) {
+                document.getElementById("frase").innerHTML += texto.charAt(i);
+                i++;
+                setTimeout(escreverTexto, 30);
+            }
+        }
+
+        escreverTexto();
+
+        function mostrarFinal() {
             document.getElementById("final").innerHTML =
-            "Nunca desista. Você é mais forte do que imagina. 💙";
+             "Nunca desista. Você é mais forte do que imagina. 💙";
         }
     </script>
 
